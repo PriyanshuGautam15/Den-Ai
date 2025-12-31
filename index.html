@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coming Soon | DEN-AI Community</title>
+        <link rel="icon" href="denai.png" type="image/png">
+        <link rel="apple-touch-icon" href="denai.png">
+    <!-- Importing a modern, high-tech font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* 1. Base Styles & Theme */
+        :root {
+            --bg-dark: #070312;
+            --accent-purple: #8a3ffc;
+            --accent-blue: #00f2ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --font-main: 'Inter', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* 2. Background Atmosphere */
+        .glow-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(138, 63, 252, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 255, 0.1) 0%, transparent 40%);
+        }
+
+        .ambient-light {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(138, 63, 252, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            animation: pulse 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-10%, -10%) scale(1); }
+            100% { transform: translate(10%, 10%) scale(1.2); }
+        }
+
+        /* 3. Layout Sections */
+        section {
+            height: calc(100vh - 96px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        /* 4. Hero Elements */
+        .badge {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(138,63,252,0.06);
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 12vw, 7.5rem);
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #fff 40%, rgba(255,255,255,0.9) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 20px 30px rgba(138, 63, 252, 0.45));
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            max-width: 720px;
+            font-size: clamp(0.75rem, 1.2vw, 0.8rem);
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        /* 5. Glassmorphism Card (Visual cue from Den-Ai image) */
+        .preview-container {
+            width: 100%;
+            max-width: 980px;
+            margin-top: 2.5rem;
+            perspective: 1000px;
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 28px;
+            padding: 2rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 100px rgba(0, 0, 0, 0.6),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px) rotateX(2deg);
+        }
+
+        .progress-bar {
+            width: 60%;
+            max-width: 520px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 999px;
+            margin: 1.5rem auto 0.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 36%;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            box-shadow: 0 6px 30px rgba(138,63,252,0.25);
+            border-radius: 999px;
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        /* 6. Interaction Elements */
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            color: #fff;
+            box-shadow: 0 18px 50px rgba(138,63,252,0.22);
+            padding: 16px 44px;
+            border-radius: 14px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 28px 70px rgba(138,63,252,0.28);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.95);
+            padding: 14px 34px;
+            border-radius: 14px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.03);
+            transform: translateY(-2px);
+        }
+
+        /* 7. Scroll Reveal & Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0.9;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            z-index: 3;
+            background: transparent;
+            padding: 0 2rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .glass-card { padding: 2rem 1.5rem; }
+            .cta-group { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-overlay"></div>
+    <div class="ambient-light"></div>
+
+    <section class="hero">
+        <div class="badge reveal">COMING SOON V1.0</div>
+
+        <h1 class="reveal">DEN-AI Community  <br><span class="highlight">Learn. Build. Collaborate.</span></h1>
+
+        <p class="description reveal">DEN‑AI — An open community for AI enthusiasts, learners, builders, engineers and researchers</p>
+
+        <div class="preview-container reveal">
+            <div class="glass-card">
+                <div class="status-text">Community Update</div>
+                <h3 style="margin-top: 1rem; font-size: 1.25rem;">Revamping the community experience</h3>
+                <p style="opacity: 0.9; margin-top: 0.75rem;">
+                    DEN-AI focuses on improving the community experience for collaborative learning, discussion, and exploration of AI.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>&copy; 2026 DEN-AI Community. A community shaped by its members.</p>
+    </footer>
+
+    <!-- Removed join modal and CTA buttons to focus on product information -->
+
+    <script>
+        // 1. Scroll Reveal Animation Logic
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el, index) => {
+            // Apply a staggered delay for children elements in the same viewport
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+
+        // 2. Mouse Move Parallax for the Glow Blobs (Subtle)
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            const ambient = document.querySelector('.ambient-light');
+            ambient.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>
