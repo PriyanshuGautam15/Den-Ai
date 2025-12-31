@@ -248,21 +248,20 @@
         }
 
         footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
+            /* place footer in normal document flow so it appears after content */
+            position: relative;
             width: 100%;
-            height: 96px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            opacity: 0.9;
+            opacity: 0.95;
             font-size: 0.85rem;
             letter-spacing: 1px;
-            z-index: 3;
+            z-index: 1;
             background: transparent;
-            padding: 0 2rem;
+            padding: 1.25rem 2rem;
+            margin-top: 2rem;
         }
 
         /* Responsive Adjustments */
@@ -271,9 +270,9 @@
             .glass-card { padding: 2rem 1.5rem; }
             .cta-group { flex-direction: column; width: 100%; max-width: 300px; }
             .btn { width: 100%; justify-content: center; }
-            /* make room for the fixed footer so cards don't get overlapped */
-            section { padding-bottom: 120px; min-height: auto; }
-            footer { height: 72px; font-size: 0.78rem; }
+            /* footer is in normal flow now; no extra bottom padding required */
+            section { min-height: auto; }
+            footer { font-size: 0.78rem; }
             /* ensure cards and badges are above the footer if overlap happens */
             .glass-card { position: relative; z-index: 4; }
             .badge { z-index: 5; position: relative; }
