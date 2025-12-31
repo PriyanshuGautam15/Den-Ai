@@ -66,7 +66,7 @@
 
         /* 3. Layout Sections */
         section {
-            height: calc(100vh - 96px);
+            min-height: calc(100vh - 96px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -242,8 +242,9 @@
             height: 100%;
         }
 
+        /* allow vertical scrolling (prevent content clipping on mobile) */
         body {
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         footer {
@@ -270,6 +271,12 @@
             .glass-card { padding: 2rem 1.5rem; }
             .cta-group { flex-direction: column; width: 100%; max-width: 300px; }
             .btn { width: 100%; justify-content: center; }
+            /* make room for the fixed footer so cards don't get overlapped */
+            section { padding-bottom: 120px; min-height: auto; }
+            footer { height: 72px; font-size: 0.78rem; }
+            /* ensure cards and badges are above the footer if overlap happens */
+            .glass-card { position: relative; z-index: 4; }
+            .badge { z-index: 5; position: relative; }
         }
     </style>
 </head>
@@ -308,7 +315,8 @@
         // 1. Scroll Reveal Animation Logic
         const observerOptions = {
             threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
+            /* increase negative bottom margin so elements reveal before being covered by footer on small screens */
+            rootMargin: "0px 0px -120px 0px"
         };
 
         const observer = new IntersectionObserver((entries) => {
