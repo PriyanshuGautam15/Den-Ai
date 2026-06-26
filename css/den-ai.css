@@ -795,6 +795,33 @@ h1, h2, h3, h4, h5, h6, .font-display {
     gap: 1rem;
 }
 .form-note { font-size: var(--fs-micro); opacity: 0.4; letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-form .btn[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--shadow);
+}
+
+.form-status {
+    margin: 0;
+    min-height: 1.6em;
+    padding: 0.75rem clamp(1rem, 2vw, 2rem) 1.1rem;
+    border-top: var(--border-thin);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.form-status--success {
+    color: #0e7a3b;
+    background: rgba(14, 122, 59, 0.06);
+}
+
+.form-status--error {
+    color: #9a3a1a;
+    background: rgba(154, 58, 26, 0.06);
+}
 
 
 /* ----- 14. ABOUT / VALUES ----- */
