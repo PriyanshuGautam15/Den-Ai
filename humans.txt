@@ -1,6 +1,142 @@
-/* TEAM */
-Company: DEN-AI
-Website: https://den-ai.in
+/* ==========================================================================
 
-/* SITE */
-Built for businesses using modern AI technologies.
+██████╗ ███████╗███╗   ██╗      █████╗ ██╗
+██╔══██╗██╔════╝████╗  ██║     ██╔══██╗██║
+██║  ██║█████╗  ██╔██╗ ██║     ███████║██║
+██║  ██║██╔══╝  ██║╚██╗██║     ██╔══██║██║
+██████╔╝███████╗██║ ╚████║     ██║  ██║██║
+╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═╝  ╚═╝╚═╝
+
+Artificial Intelligence • Automation • Software Engineering • Cybersecurity
+
+========================================================================== */
+
+/* COMPANY */
+
+Name:           DEN-AI
+Website:        https://den-ai.in
+Email:          contact@den-ai.in
+Country:        India
+
+/* FOUNDERS */
+
+Priyanshu Gautam
+Co-Founder
+AI Engineering • Full Stack Development • Data Analytics
+
+Priyansh Yawalkar
+Co-Founder
+Cybersecurity • Infrastructure • Security Engineering
+
+Mission:
+Building practical Artificial Intelligence solutions that help businesses
+automate operations, improve decision making, and accelerate growth.
+
+/* WHAT WE BUILD */
+
+✓ AI Agents
+✓ Voice AI
+✓ AI Chatbots
+✓ Business Automation
+✓ Workflow Automation
+✓ Custom AI Software
+✓ Web Applications
+✓ Data Analytics
+✓ Business Intelligence
+✓ Power BI Dashboards
+✓ Website Development
+
+/* TECHNOLOGY STACK */
+
+Languages
+- Python
+- JavaScript
+- SQL
+- HTML5
+- CSS3
+
+Frameworks
+- FastAPI
+- Flask
+- React
+- Node.js
+
+Artificial Intelligence
+- Large Language Models (LLMs)
+- Google Gemini
+- OpenRouter
+- Retrieval-Augmented Generation (RAG)
+- AI Agents
+- Voice AI
+- NLP
+
+Data
+- Power BI
+- Pandas
+- NumPy
+- PostgreSQL
+- Supabase
+- AWS
+- Firebase
+
+Cloud & DevOps
+- GitHub Pages
+- Hostinger
+- Render
+- Firebase
+- Docker
+- Git
+
+/* PHILOSOPHY */
+
+Building products.
+
+Not prototypes.
+
+Not hype.
+
+Engineering solutions that create measurable business value.
+
+/* SPECIAL THANKS */
+
+Open Source Community
+Python Foundation
+Mozilla
+GitHub
+Stack Overflow
+The AI Research Community
+
+/* DISCOVER MORE */
+
+Homepage
+https://den-ai.in/
+
+About
+https://den-ai.in/about.html
+
+Solutions
+https://den-ai.in/solutions.html
+
+Contact
+https://den-ai.in/contact.html
+
+/* EASTER EGG */
+
+If you're reading this...
+
+You're probably a developer, engineer, researcher, or just curious.
+
+Welcome. 
+
+We believe technology should solve problems, not create them.
+If you enjoy building meaningful products with AI, automation,
+or cybersecurity, we'd love to connect.
+
+contact@den-ai.in
+
+/* COPYRIGHT */
+
+© 2026 DEN-AI.
+Crafted with curiosity, engineering, and countless cups of coffee.
+
+==========================================================================
