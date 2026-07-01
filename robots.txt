@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://den-ai.in/sitemap.xml
+
+# Block nothing
